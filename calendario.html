@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  
+    <title>Calendário simples em js</title>
+    <link href="calendario.css" rel="stylesheet">
+    <script defer src="./js/calendario.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  
+  </head>
+  
+  <body>
+
+<!--Selecionando os periodos-->   
+      <div id="calPeriod">
+      <input id="calBack" type="button" value="&lt;">
+      <select id="calMonth"></select>
+      <input type="number" id="calYear">
+      <input id="calNext" type="button" value="&gt;">
+    </div>
+
+  
+    <!--CALENDARIO-->
+    <div id="calWrap"></div>
+
+    <!--
+    Evento
+    calForm será para adicionar e editar eventos no calendario
+    calWrap para mostrar a seleção do calendário
+    calPeriod selecionar o mes e o ano
+    -->
+
+
+<dialog id="calForm">
+    <form method="dialog">
+      <div id="evtClose">
+        X
+      </div>
+      <h2>
+        Calendário
+      </h2>
+
+      <label>
+        Data
+      </label>
+
+      <input 
+      type="text" id="evtDate" readonly>
+      <label>
+        Detalhes
+      </label>
+      
+      <textarea id="evtTxt" 
+        required>
+      </textarea>
+
+      <input id="evtDel" type="button" value="Delete">
+      <input id="evtSave" type="submit" value="Salvar">
+
+    </form>
+</dialog>
+
+
+
+<div class="BotaoVoltar">
+    
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" title="Voltar">
+            <a href="pagina.html">Voltar</a>
+             
+        
+    </button>
+      
+    
+</div>
+
+
+<div id="myChart" style="max-width: 700px; height: 400px"></div>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<script>
+
+
+/*
+Pular uma linha
+Adicion
+*/
+
+
+
+/*
+Para fazer as comparações, mas provavelmente vou retirar esses codes daqui e colcoar no calendario.html*/
+
+google.charts.load('current', {packages:["corechart"]});
+google.charts.setOnLoadCallback(drawChart);
+
+
+function drawChart()
+{
+    const data = google.vizualization.arrayToDataTable([
+    //chamar o csv
+    ]);    
+
+}
+
+const options =
+{
+    title: "Comparação de energia"
+};
+
+//Plotar e Desenhar o gráfico
+const chart = new google.visualization.BarChart(document.getElementById("myChart"));
+chart.draw(data, options);
+</script>
+
+  
+  </body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,142 @@
+/*
+se server:
+
+    const http = require(http)
+
+    const host = 'localhost'
+    const port = 8000
+
+    const requestListener = function (req, res) 
+    {
+        res.setHeader("Content-Type", "text/csv");
+        res.writeHead(200);
+        res.end(``<html><body> <h1>html here</h1> </body>)
+    }
+
+
+
+    const server = http.createServer(requestListener);
+    server.listen(port, host, () => 
+    {
+        console.log(`server is running http:// ${host}:${port}`);
+
+    })
+
+*/
+
+
+
+/*
+
+criar uma page com cabeçalho
+adicionar um botão
+calendário para o usuário poder navegar e escolher a data para selecionar
+o dia e quanto tempo de energia disposotivo gastou, tanto ligado como desligado
+Conectar uma api
+
+*/
+
+pagina inicial
+desejando um bem vindo....
+pagina no calendario:
+conseguir escolher a data (dia, mes e ano) para poder visualizar como estão os gastos de energia
+quando escolher com um evento de clique, na mesma página ou criando outra
+colocar os gráficos gerados para poder representar.
+
+** fiz em react 
+
+
+
+EM JS
+Sobre os graficos para mostrar:
+2 opções:
+*Vou importar o Google charts para fazer isso em js (pensando no grafico de barras)
+e verificar *se consigo conectar o power Bi usando o python (tem uma api em js tambem mas preciso pesquisar como conecta-la) -pesquisei
+
+Grafico de barras ou de linhas (Talvez o de linhas fique melhor para visualizar os picos de energia) -pesquisei
+
+
+EM PYTHON
+usaria o pandas para já incrementar uma analise
+
+
+Preciso resolver o bug do calendário OK
+ e diminuir ele OK
+
+
+ Sobre aumentar a fonte dentro do html
+  style="font-size: large;"
+
+
+
+  Sobre o SQL InJECTION (forma de ataque) para previnir dados vasados
+
+  "
+   First, we need to address the user input validation implemented in our user-facing front-end code. This validation would be our first layer of defense against bad actors and serve as a responsive interaction mechanism for users struggling with interface intuitiveness.
+
+   Second, input validation can be implemented at the control level, where most of the calculations are done. This strategy could be as simple as revalidating and, when appropriate, sanitizing the user input before it reaches the model layer. Additionally, adding a third-party library like "node-mysql" that implements escaping automatically also helps.
+
+Once the issues at the top level are addressed, we can then secure the database layer. To do that, all we need to do is implement what are known as query placeholders or name placeholders.
+
+  "
+
+  Autenticação no back-end com JWT
+
+
+  04- Hoje construi a mesma pagina com react usando o expo para comparar qual ficará melhor.
+  Agora é ligar o csv no projeto para plotar graficos de comparação.
+  Fiz algumas pesquisas para decidir qual ferramenta vou usar na plotagem.
+  fiz alguns testes com bi e o charts do google. Ambos são bons. Mas ainda preciso fazer alguns testes.
+  **Pesquisar como aplicar o sql injection no projeto, deixar a web page mais bonita aqui e no react organizar melhor os itens
+  (no ract conseguiremos usar a aplicação no celular então talvez para o cliente seja ainda melhor.)
+
+
+  Now you have two separate servers running: one for JavaScript (Node.js) on port 3000 and one for Python on port 8000. You can access the JavaScript server at http://localhost:3000 and the Python server at http://localhost:8000. Each server will serve content independently, and you can customize and expand them according to your needs.
+
+**indice unico sql
+
+
+  *****************
+  sobre o script.py que fiz
+
+  Remember to replace 'data.csv' with the actual path to your CSV file and 'x_column', 'y_column', 'data_column', 'category_column', and 'value_column' with the actual column names or data you want to plot. Customize the plot types and styles to match your data visualization goals.
+  *******************
+
+
+  **
+  não vou conseguir fazer em csv, mas usar api pra poder tratar os dados e adicionar na pagina
+
+
+
+** 
+1. fazer a requisição usando uma api OK
+2. fazer um post para a api OK
+3. Usar id da seção com a url e o token
+4. Avisar o jerry se deu true ou false OK  TRUE
+5. Ao conectar, tratar os dados.
+6. Fazer um gui
+
+
+Para serializar uma requisição no Node.js, você pode usar o módulo querystring para criar uma string de consulta (query string) a partir de um objeto JavaScript. A serialização é útil quando você deseja enviar dados em uma requisição GET ou quando precisa enviar dados no corpo de uma requisição POST ou PUT, no formato x-www-form-urlencoded
+
+
+validar a sessão para pegar os dados
+verificar a pagina como esta rodando (algum problema em rodar no android) -- também preciso ligar a página dentro da page do calendario junto com o cabeçalho
+
+Não esquecer o"express-session"
+
+
+*Depois da requisição*
+Após fazer uma requisição de dados para uma API em uma aplicação React Native usando a biblioteca axios (ou qualquer outra biblioteca de requisição HTTP), você pode acessar os dados da resposta dentro do callback .then() 
+
+Neste exemplo, response.data contém os dados retornados pela API, e você pode usá-los conforme necessário. Dependendo da estrutura dos dados, você pode renderizar componentes com base neles, atualizar o estado do componente (se estiver usando a classe React.Component), ou realizar qualquer outra ação que seja apropriada para o seu aplicativo.
+
+Lembre-se de que a estrutura dos dados retornados pela API pode variar dependendo da API específica que você está usando. Portanto, é importante consultar a documentação da API para entender como os dados são formatados e quais campos estão disponíveis para acesso. Certifique-se também de manipular erros de requisição (conforme mostrado no .catch()) para fornecer feedback ao usuário e tratar situações em que a requisição não seja bem-sucedida.
+
+
+Para testar o servidor usar a ferramemnta ocuRL OU POSTMAN (ESTOU BAIXANDO O POSTMAN) ok
+para enviar uma solicitção post com dados json 
+Usando o express.js posso processar os dados na aplicação
+
+preciso de um ip
+

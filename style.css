@@ -1,0 +1,48 @@
+
+body{
+    
+    background-color: rgb(245, 238, 238);
+    justify-content: center;
+    display: flex;
+}
+
+.Botao{
+    border-radius: 50px;
+    color: blanchedalmond;
+    border-left-color: bisque;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    border: solid;
+
+}
+
+.botaoBaixo{
+   color: gainsboro;
+   
+}
+
+
+ :visited{
+    color: black;
+ }
+
+.Pesquisar{
+    
+    color: black;
+    width: 800px;
+    height: 20px;
+
+}
+
+
+.Cabecalho{
+    color: black;
+    border: solid;
+    border-radius: 50px;
+    background-color: rgb(114, 155, 207);
+    border-left: 50px;
+    border-top: 10px;
+    width: 150px;
+    height: 50px;
+}

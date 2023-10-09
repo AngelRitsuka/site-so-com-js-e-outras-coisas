@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        Página incial
+    </title>
+
+    <meta charset="utf-8" />
+
+    <link  href="style.css" rel="stylesheet">
+ 
+    
+    <!--Aplicando bootstrap no botão de pesquisa-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="p5.dom.min.js"></script>
+    <script src="p5.min.js"></script>
+    <script src="./bibliotecas/p5.play.js"></script>
+ 
+
+    <!--Para o sweet alert-->
+
+    <script src="bibliotecas/sweetalert.min.js"  
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="bibliotecas/sweetalert.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    
+    <link rel="stylesheet" href="style.css">
+   
+
+</head>
+
+<body>
+
+<div id="data-container">
+
+</div>
+<button id="fetch-data">Fetch data</button>
+<script src="server.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const fetchDataButton = document.getElementById('fetch-data');
+    const dataContainer = document.getElementById('data-container');
+
+    // Event listener for the button click
+    fetchDataButton.addEventListener('click', () => {
+        // Make a GET request to the server
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                // Update the HTML page with the received data
+                dataContainer.innerHTML = `<p>${data.message}</p>`;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    });
+});
+
+</script>
+
+
+
+    <script>
+      
+    </script>
+
+    <button onclick="makeFetchPostRequest()">Make Fetch POST Request</button>
+    <p id="fetch-response"></p>
+  
+    <script>
+      function makeFetchPostRequest() {
+        var url = 'https://jsonplaceholder.typicode.com/posts';
+        var data = {
+          title: 'Sample Post',
+          body: 'This is a sample post request.',
+          userId: 1
+        };
+  
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => {
+          if (response.status === 201) {
+            return response.json();
+          } else {
+            console.error('Error:', response.status);
+          }
+        })
+        .then(data => {
+          document.getElementById('fetch-response').textContent = JSON.stringify(data);
+        })
+        .catch(error => console.error(error));
+      }
+
+      </script>
+
+      <script>
+// Define the POST request data
+const postData = {
+  key1: 'value1',
+  key2: 'value2',
+};
+
+// Define the API endpoint
+const apiUrl = 'https://example.com/api';
+
+// Define request options
+const requestOptions = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json', // Set the appropriate content type
+  },
+  body: JSON.stringify(postData), // Convert data to JSON format
+};
+
+// Send the POST request
+fetch(apiUrl, requestOptions)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Parse the response as JSON
+  })
+  .then((data) => {
+    // Handle the data received from the API
+    console.log('API response:', data);
+    // Now you can access and use the data as needed
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+
+      </script>
+
+    <div class="Cabecalho">
+        <div class="Menu">
+            <center>
+            <p>
+                Página
+            </p> 
+            </center>
+
+        </div>
+            <div class="linksPag">
+                <a href=""></a>
+            </div>
+
+            <center>
+
+                <div class="Pesquisar">
+                    <input  id="Pesquisando" placeholder="Pesquise aqui" name="Pesquisar">
+                    <label for="pesquisas"> </label>
+                
+                </center>
+                </div>
+                
+                    
+                
+                <br>
+            
+                <div class="Botao">
+                <center>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Aa" ></button>> 
+                        <a href="calendario.html">
+                            Ir para Calendário
+                        </a> 
+                    </button>
+                
+                </center>
+                
+                </div>
+    </div>
+
+    <br>
+
+
+    <br><br>
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+    </body>
+
+
+    </html>
